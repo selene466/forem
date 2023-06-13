@@ -1,6 +1,8 @@
 import { h } from 'preact';
 import { ButtonNew as Button } from '@crayons';
 
+const idVer = [13, 22];
+
 export const MinimalProfilePreviewCard = ({
   triggerId,
   contentId,
@@ -17,6 +19,15 @@ export const MinimalProfilePreviewCard = ({
       aria-label={`${name} profile details`}
     >
       {name}
+      {idVer.includes(userId) ? (
+        <img
+          src="/media/verified.gif"
+          class="ml-2 align-baseline inline-block"
+          alt="verified"
+          width="18px"
+          height="18px"
+        />
+      ) : null}
     </button>
 
     <div
