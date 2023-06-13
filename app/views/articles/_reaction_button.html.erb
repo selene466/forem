@@ -4,9 +4,12 @@
   aria-pressed="false"
   class="crayons-reaction crayons-reaction--<%= category %> crayons-tooltip__activator relative"
   data-category="<%= category %>">
+  <!--
     <span class="crayons-reaction__icon <%= "crayons-reaction__icon--borderless" %> crayons-reaction__icon--inactive">
       <%= crayons_icon_tag(image_path, aria_hidden: true) %>
     </span>
+  -->
+    <img src="/media/bookmark-saved.gif" alt="bookmark" width="24px" height="24px" />
     <% if user_signed_in? # We cannot trigger the action state unless the user is signed in, so no need to render. %>
       <span class="crayons-reaction__icon <%= "crayons-reaction__icon--borderless" %> crayons-reaction__icon--active">
         <%= crayons_icon_tag(image_active_path, aria_hidden: true) %>

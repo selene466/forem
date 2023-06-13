@@ -24,11 +24,18 @@
   </button>
 
   <div>
+  <!--
     <img alt="onboarding task card image" class="task-card-image" src="<%= Settings::General.logo_png %>" />
+  -->
+    <img alt="onboarding task card image" class="task-card-image" src="/media/welcome-heart.gif" />
   </div>
 
+  <!--
   <h2 class="task-card-title" id="task-card-title"><%= t("views.onboardings.heading") %></h2>
   <p id="task-card-subtitle" class="task-card-subtitle"><%= t("views.onboardings.subtitle") %></p>
+  -->
+  <h2 class="task-card-title" id="task-card-title">Selamat bergabung di dalam komunitas DEV AWS</h2>
+  <p id="task-card-subtitle" class="task-card-subtitle">HAL-HAL DISARANKAN YANG DAPAT ANDA LAKUKAN</p>
   <ul class="task-card-actions">
     <% if Article.admin_published_with("welcome").any? %>
       <li class="task-card-action">

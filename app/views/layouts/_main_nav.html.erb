@@ -1,12 +1,19 @@
 <% navigation_links = Rails.cache.fetch("navigation_links", expires_in: 15.minutes) do
-{
-    default_nav_ids: NavigationLink.default_section.ordered.ids,
-    other_nav_ids: NavigationLink.other_section.ordered.ids,
-  }
-end %>
+     {
+       default_nav_ids: NavigationLink.default_section.ordered.ids,
+       other_nav_ids: NavigationLink.other_section.ordered.ids
+     }
+   end %>
 
 <nav class="mb-4 <% unless user_signed_in? %>mt-4<% end %>" data-testid="main-nav" aria-label="<%= community_name %>">
   <ul class="default-navigation-links sidebar-navigation-links spec-sidebar-navigation-links">
+    <li style="position: relative">
+    <a href="/" class="sidebar-navigation-link c-link c-link--block c-link--icon-left">
+      <img src="/media/home.gif" alt="icon" width="32px" height="32px" style="margin-left: -12px; margin-right: 8px;position: absolute; top: 4px;" />
+      <div style="margin-right: 24px"></div>
+      Home
+    </a>
+  </li>
     <%= render partial: "layouts/sidebar_nav_link", collection: NavigationLink.where(id: navigation_links[:default_nav_ids]).ordered, as: :link, cached: true %>
   </ul>
 </nav>
